@@ -1,0 +1,31 @@
+# Backend files (not needed for frontend deployment)
+backend/
+node_modules/
+.env
+.env.*
+
+# Development files
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+.angular/
+
+# Git files
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+EMAIL_SETUP.md
+
+# Scripts
+*.bat
+deploy.bat
+setup-*.bat
+start-dev.bat
