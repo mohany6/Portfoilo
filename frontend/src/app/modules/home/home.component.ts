@@ -44,7 +44,7 @@ import { SectionTitleComponent } from '../../shared/components/section-title/sec
                     <i class="fab fa-github"></i>
                     <span>Github</span>
                   </a>
-                  <a href="https://docs.google.com/document/d/1htrayQMjZoz1wnnY8e_jUj79JloRi5Za/edit?usp=drive_link&ouid=103625594032209431851&rtpof=true&sd=true" target="_blank" class="hero__social-link">
+                  <a href="https://drive.google.com/file/d/1lXn_JH5fECEyr0c2duNMAlfSBTZlRDii/view?usp=sharing" target="_blank" class="hero__social-link">
                     <i class="fas fa-file-pdf"></i>
                     <span>CV/Resume</span>
                   </a>
