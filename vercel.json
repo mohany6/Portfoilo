@@ -5,7 +5,7 @@
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/frontend/browser"
+        "distDir": "dist/frontend/browser/browser"
       }
     }
   ],
@@ -32,7 +32,7 @@
     }
   ],
   "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist/frontend/browser",
+  "outputDirectory": "frontend/dist/frontend/browser/browser",
   "installCommand": "npm install",
   "framework": "angular"
 }
