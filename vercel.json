@@ -12,27 +12,27 @@
   "rewrites": [
     {
       "source": "/assets/(.*)",
-      "destination": "/frontend/public/assets/$1"
+      "destination": "/assets/$1"
     },
     {
       "source": "/(.*\\.js)",
-      "destination": "/frontend/$1"
+      "destination": "/$1"
     },
     {
       "source": "/(.*\\.css)",
-      "destination": "/frontend/$1"
+      "destination": "/$1"
     },
     {
       "source": "/(.*\\.ico)",
-      "destination": "/frontend/$1"
+      "destination": "/$1"
     },
     {
       "source": "/(.*)",
-      "destination": "/frontend/index.html"
+      "destination": "/index.html"
     }
   ],
   "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist",
+  "outputDirectory": "frontend/dist/frontend/browser",
   "installCommand": "npm install",
   "framework": "angular"
 }
