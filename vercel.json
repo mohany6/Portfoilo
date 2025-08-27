@@ -15,6 +15,10 @@
       "destination": "/frontend/public/assets/$1"
     },
     {
+      "source": "/favicon.ico",
+      "destination": "/frontend/public/favicon.ico"
+    },
+    {
       "source": "/(.*\\.js)",
       "destination": "/frontend/$1"
     },
@@ -24,6 +28,30 @@
     },
     {
       "source": "/(.*\\.ico)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.png)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.jpg)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.jpeg)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.gif)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.svg)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.pdf)",
       "destination": "/frontend/$1"
     },
     {
