@@ -1,0 +1,26 @@
+# This file ensures the assets/images directory is tracked by git
+# Replace this file with actual images:
+# - profile.jpg (hero section - Mohamed Hany's photo)
+# - about-me.jpg (about page)
+# - blog-default.jpg (blog fallback image)
+
+# Project images should be placed in assets/projects/
+# - cinema-booking.jpg
+# - ecommerce-store.jpg
+# - portfolio-cms.jpg
+# - healthcare-ai.jpg
+# - task-manager.jpg
+# - weather-dashboard.jpg
+
+# Tech stack icons should be placed in assets/icons/
+# - angular.svg
+# - react.svg
+# - vue.svg
+# - nodejs.svg
+# - express.svg
+# - postgresql.svg
+
+# Blog images should be placed in assets/blog/
+# - nodejs-scalability.jpg
+# - angular-modern.jpg
+# - mongodb-design.jpg

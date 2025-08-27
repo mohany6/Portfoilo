@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <rect width="250" height="250" fill="#4fc08d"/>
+  <polygon fill="#35495e" points="125,50 80,140 170,140"/>
+  <polygon fill="white" points="125,70 100,120 150,120"/>
+  <text x="125" y="230" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">Vue</text>
+</svg>
