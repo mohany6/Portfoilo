@@ -378,9 +378,9 @@ export class AboutComponent {
 
 
   socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/', icon: 'fab fa-github' },
+    { name: 'GitHub', url: 'https://github.com/mohany6', icon: 'fab fa-github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/', icon: 'fab fa-linkedin' },
-    { name: 'Twitter', url: 'https://twitter.com/', icon: 'fab fa-twitter' }
+    { name: 'Instagram', url: 'https://www.instagram.com/mo.hany.o/?next=%2F', icon: 'fab fa-instagram' }
   ];
 
   downloadCV(): void {
@@ -415,7 +415,6 @@ export class AboutComponent {
     const descriptions: { [key: string]: string } = {
       'GitHub': 'Check out my code',
       'LinkedIn': 'Connect professionally', 
-      'Twitter': 'Follow my updates',
       'Instagram': 'Behind the scenes'
     };
     return descriptions[platform] || 'Follow me';
