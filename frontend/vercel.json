@@ -31,7 +31,7 @@
       "destination": "/index.html"
     }
   ],
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist/frontend/browser",
   "installCommand": "npm install",
   "framework": "angular"
