@@ -12,7 +12,7 @@
   "rewrites": [
     {
       "source": "/assets/(.*)",
-      "destination": "/frontend/public/assets/$1"
+      "destination": "/frontend/dist/frontend/browser/assets/$1"
     },
     {
       "source": "/favicon.ico",
