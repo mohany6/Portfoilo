@@ -83,7 +83,7 @@ interface Skill {
             </div>
             
             <div class="about-intro__image">
-              <img src="/assets/images/profile.jpg" alt="About John Doe" />
+              <img src="/assets/images/profile.jpg" alt="About mohany" />
             </div>
           </div>
         </section>

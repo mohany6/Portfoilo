@@ -1,0 +1,3 @@
+[33m1e11e76[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Revert to rewrites: use source/destination properties for better Vercel compatibility
+[33ma687e61[m[33m ([m[1;31morigin/main[m[33m)[m Fix Vercel config: use routes instead of rewrites for better static build compatibility
+[33m0d69dcb[m Fix Vercel asset serving: remove /frontend/ prefix to serve assets from root
