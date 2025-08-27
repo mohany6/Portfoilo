@@ -9,13 +9,82 @@
       }
     }
   ],
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist",
-  "framework": "angular",
   "rewrites": [
     {
+      "source": "/assets/(.*)",
+      "destination": "/frontend/dist/frontend/browser/assets/$1"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/frontend/dist/frontend/browser/assets/favicon.ico"
+    },
+    {
+      "source": "/assets/images/(.*)",
+      "destination": "/frontend/dist/frontend/browser/assets/images/$1"
+    },
+    {
+      "source": "/assets/icons/(.*)",
+      "destination": "/frontend/dist/frontend/browser/assets/icons/$1"
+    },
+    {
+      "source": "/assets/screenshots/(.*)",
+      "destination": "/frontend/dist/frontend/browser/assets/screenshots/$1"
+    },
+    {
+      "source": "/assets/projects/(.*)",
+      "destination": "/frontend/dist/frontend/browser/assets/projects/$1"
+    },
+    {
+      "source": "/assets/cv/(.*)",
+      "destination": "/frontend/dist/frontend/browser/assets/cv/$1"
+    },
+    {
+      "source": "/assets/patterns/(.*)",
+      "destination": "/frontend/dist/frontend/browser/assets/patterns/$1"
+    },
+    {
+      "source": "/(.*\\.js)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.css)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.ico)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.png)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.jpg)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.jpeg)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.gif)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.svg)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.pdf)",
+      "destination": "/frontend/$1"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/frontend/dist/frontend/browser/index.html"
+      "destination": "/frontend/index.html"
     }
-  ]
+  ],
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "npm install",
+  "framework": "angular"
 }
