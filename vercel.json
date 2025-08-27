@@ -9,26 +9,26 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
     },
     {
-      "src": "/(.*\\.js)",
-      "dest": "/$1"
+      "source": "/(.*\\.js)",
+      "destination": "/$1"
     },
     {
-      "src": "/(.*\\.css)",
-      "dest": "/$1"
+      "source": "/(.*\\.css)",
+      "destination": "/$1"
     },
     {
-      "src": "/(.*\\.ico)",
-      "dest": "/$1"
+      "source": "/(.*\\.ico)",
+      "destination": "/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "buildCommand": "cd frontend && npm install && npm run build",
