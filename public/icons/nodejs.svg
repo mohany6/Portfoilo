@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <rect width="250" height="250" fill="#68a063"/>
+  <polygon fill="#333" points="125,40 190,80 190,160 125,200 60,160 60,80"/>
+  <polygon fill="#68a063" points="125,50 180,85 180,155 125,190 70,155 70,85"/>
+  <text x="125" y="230" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Node.js</text>
+</svg>

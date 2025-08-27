@@ -1,0 +1,16 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#1f2937"/>
+<rect x="50" y="75" width="300" height="150" fill="#374151" rx="10"/>
+<circle cx="100" cy="120" r="15" fill="#ef4444"/>
+<circle cx="150" cy="120" r="15" fill="#ef4444"/>
+<circle cx="200" cy="120" r="15" fill="#10b981"/>
+<circle cx="250" cy="120" r="15" fill="#10b981"/>
+<circle cx="300" cy="120" r="15" fill="#10b981"/>
+<circle cx="100" cy="170" r="15" fill="#10b981"/>
+<circle cx="150" cy="170" r="15" fill="#10b981"/>
+<circle cx="200" cy="170" r="15" fill="#10b981"/>
+<circle cx="250" cy="170" r="15" fill="#10b981"/>
+<circle cx="300" cy="170" r="15" fill="#10b981"/>
+<text x="200" y="50" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">Cinema Booking</text>
+<text x="200" y="260" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Movie Ticket Booking System</text>
+</svg>

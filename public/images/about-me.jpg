@@ -1,0 +1,6 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#f9fafb"/>
+<circle cx="200" cy="120" r="50" fill="#667eea"/>
+<path d="M130 240c0-38.66 31.34-70 70-70s70 31.34 70 70v20H130v-20z" fill="#667eea"/>
+<text x="200" y="285" text-anchor="middle" fill="#374151" font-family="Arial" font-size="16" font-weight="bold">About Me</text>
+</svg>
