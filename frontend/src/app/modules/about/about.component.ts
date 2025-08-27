@@ -40,16 +40,16 @@ interface Skill {
             <div class="about-intro__text">
               <app-section-title
                 title="About Me"
-                subtitle="I am a passionate full-stack developer with expertise in modern web technologies."
+                subtitle="I am a passionate full-stack developer fresh graduate with expertise in modern web technologies."
                 alignment="left"
                 [showDivider]="false"
               ></app-section-title>
               
               <div class="about-intro__description">
                 <p>
-                  I am a full-stack developer specializing in Angular, Node.js, and MongoDB. 
-                  I'm passionate about creating innovative web applications and sharing knowledge 
-                  through video coding tutorials and educational content.
+                  I am a full-stack developer fresh graduate specializing in Angular, Node.js, and MongoDB. 
+                  I'm passionate about creating innovative web applications and can use Vibe coding 
+                  to build modern, efficient solutions.
                 </p>
                 <p>
                   My passion lies in creating clean, efficient code and delivering 
@@ -58,9 +58,9 @@ interface Skill {
                   with industry trends.
                 </p>
                 <p>
-                  When I'm not coding, I enjoy creating video tutorials, contributing to 
-                  open-source projects, writing technical articles, and mentoring aspiring developers 
-                  through online platforms and coding communities.
+                  When I'm not coding, I enjoy contributing to open-source projects, 
+                  writing technical articles, and exploring new technologies to enhance 
+                  my development skills.
                 </p>
               </div>
 
@@ -92,7 +92,7 @@ interface Skill {
         <section class="skills" id="skills">
           <app-section-title
             title="Skills & Technologies"
-            subtitle="Here are the technologies and tools I work with to build modern applications."
+            subtitle="As a fresh graduate, here are the technologies and tools I work with to build modern applications."
           ></app-section-title>
 
           <div class="skills__grid">
@@ -156,7 +156,7 @@ interface Skill {
           <div class="connect__content">
             <app-section-title
               title="Let's Connect"
-              subtitle="I'm always interested in new opportunities, collaborations, and creating amazing projects together."
+              subtitle="As a fresh graduate, I'm excited about new opportunities, collaborations, and creating amazing projects together."
             ></app-section-title>
 
             <div class="connect__grid">
@@ -186,11 +186,11 @@ interface Skill {
                   
                   <div class="connect__contact-item" data-type="work">
                     <div class="connect__contact-icon">
-                      <i class="fas fa-video"></i>
+                      <i class="fas fa-code"></i>
                     </div>
                     <div class="connect__contact-details">
-                      <label>Content Creation</label>
-                      <span>Video coding tutorials</span>
+                      <label>Development</label>
+                      <span>Full-stack applications</span>
                     </div>
                   </div>
                   
@@ -278,6 +278,7 @@ export class AboutComponent {
         { name: 'Vue.js', level: 4, icon: 'fab fa-vuejs' },
         { name: 'TypeScript', level: 5, featured: true },
         { name: 'JavaScript', level: 5, icon: 'fab fa-js-square', featured: true },
+        { name: 'Vibe Coding', level: 4, icon: 'fas fa-rocket', featured: true },
         { name: 'HTML5', level: 5, icon: 'fab fa-html5' },
         { name: 'CSS3', level: 5, icon: 'fab fa-css3-alt' },
         { name: 'SASS/SCSS', level: 4, icon: 'fab fa-sass' }
@@ -356,7 +357,6 @@ export class AboutComponent {
       'GitHub': 'Check out my code',
       'LinkedIn': 'Connect professionally', 
       'Twitter': 'Follow my updates',
-      'YouTube': 'Watch my tutorials',
       'Instagram': 'Behind the scenes'
     };
     return descriptions[platform] || 'Follow me';
