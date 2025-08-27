@@ -1,0 +1,28 @@
+/backend
+  /src
+    /routes
+      portfolio.routes.js   -> endpoints for projects, blog posts
+    /controllers
+      portfolio.controller.js
+    /models
+      project.model.js
+      blog.model.js
+    /config
+      db.js                 -> MongoDB connection
+    server.js
+
+/frontend
+  /src
+    /app
+      /core              -> services (api, auth, interceptor)
+      /shared            -> reusable components (buttons, cards, section titles)
+      /layouts
+        /main-layout     -> header, footer, navbar
+      /modules
+        /home            -> landing page (intro + projects)
+        /about           -> about me, skills
+        /projects        -> list + case studies
+        /blog (optional) -> articles
+        /contact         -> contact form
+      app-routing.module.ts
+      app.component.ts
