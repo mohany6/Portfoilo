@@ -164,20 +164,20 @@ import { SectionTitleComponent } from '../../shared/components/section-title/sec
             
             <div class="screenshot-modal__image-container">
               <img 
-                *ngIf="modalScreenshots[currentScreenshotIndex]?.type === 'image'"
-                [src]="modalScreenshots[currentScreenshotIndex]?.url" 
-                [alt]="modalScreenshots[currentScreenshotIndex]?.caption"
+                *ngIf="modalScreenshots[currentScreenshotIndex].type === 'image'"
+                [src]="modalScreenshots[currentScreenshotIndex].url" 
+                [alt]="modalScreenshots[currentScreenshotIndex].caption"
                 class="screenshot-modal__image"
                 (load)="onImageLoad($event)"
               />
               <img 
-                *ngIf="modalScreenshots[currentScreenshotIndex]?.type === 'gif'"
-                [src]="modalScreenshots[currentScreenshotIndex]?.url" 
-                [alt]="modalScreenshots[currentScreenshotIndex]?.caption"
+                *ngIf="modalScreenshots[currentScreenshotIndex].type === 'gif'"
+                [src]="modalScreenshots[currentScreenshotIndex].url" 
+                [alt]="modalScreenshots[currentScreenshotIndex].caption"
                 class="screenshot-modal__gif"
               />
               <div class="screenshot-modal__caption">
-                {{ modalScreenshots[currentScreenshotIndex]?.caption }}
+                {{ modalScreenshots[currentScreenshotIndex].caption }}
               </div>
             </div>
             

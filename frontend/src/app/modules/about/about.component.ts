@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SectionTitleComponent } from '../../shared/components/section-title/section-title.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
-import { CardComponent } from '../../shared/components/card/card.component';
+
 
 interface Technology {
   name: string;
@@ -29,8 +29,7 @@ interface Skill {
     CommonModule,
     RouterModule,
     SectionTitleComponent,
-    ButtonComponent,
-    CardComponent
+    ButtonComponent
   ],
   template: `
     <div class="about">
