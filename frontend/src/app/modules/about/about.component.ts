@@ -95,50 +95,97 @@ interface Skill {
             subtitle="As a fresh graduate, here are the technologies and tools I work with to build modern applications."
           ></app-section-title>
 
-          <div class="skills__grid">
-            <div 
-              *ngFor="let skill of skills" 
-              class="skills__category"
-              [attr.data-category]="skill.category.toLowerCase()"
-            >
-              <div class="skills__category-header">
-                <div class="skills__category-icon">
-                  <i [class]="skill.icon"></i>
+          <div class="skills__container">
+            <div class="skills__intro">
+              <p class="skills__intro-text">
+                I've developed a strong foundation in modern web development technologies, 
+                with expertise in both frontend and backend development. My skills span 
+                from creating responsive user interfaces to building robust server-side applications.
+              </p>
+            </div>
+
+            <div class="skills__grid">
+              <div 
+                *ngFor="let skill of skills; trackBy: trackBySkill" 
+                class="skills__category"
+                [attr.data-category]="skill.category.toLowerCase()"
+              >
+                <div class="skills__category-header">
+                  <div class="skills__category-badge">
+                    <div class="skills__category-icon">
+                      <i [class]="skill.icon"></i>
+                    </div>
+                    <span class="skills__category-level">{{ skill.level }}</span>
+                  </div>
+                  <h3 class="skills__category-title">{{ skill.category }}</h3>
+                  <div class="skills__category-progress">
+                    <div class="skills__progress-bar">
+                      <div 
+                        class="skills__progress-fill" 
+                        [style.width.%]="skill.proficiency"
+                        [attr.data-progress]="skill.proficiency"
+                      ></div>
+                    </div>
+                    <span class="skills__progress-text">{{ skill.proficiency }}%</span>
+                  </div>
                 </div>
-                <h3 class="skills__category-title">{{ skill.category }}</h3>
-                <div class="skills__category-level">
-                  <span class="skills__level-text">{{ skill.level }}</span>
-                  <div class="skills__level-bar">
-                    <div 
-                      class="skills__level-fill" 
-                      [style.width.%]="skill.proficiency"
-                    ></div>
+                
+                <div class="skills__technologies">
+                  <div 
+                    *ngFor="let tech of skill.technologies; trackBy: trackByTech" 
+                    class="skills__tech-item"
+                    [class.skills__tech-item--featured]="tech.featured"
+                    [attr.data-level]="tech.level"
+                  >
+                    <div class="skills__tech-content">
+                      <div class="skills__tech-icon" *ngIf="tech.icon">
+                        <i [class]="tech.icon"></i>
+                      </div>
+                      <span class="skills__tech-name">{{ tech.name }}</span>
+                    </div>
+                    <div class="skills__tech-level">
+                      <div class="skills__level-indicator">
+                        <span class="skills__level-text">Level {{ tech.level }}/5</span>
+                        <div class="skills__level-bars">
+                          <div 
+                            *ngFor="let bar of getLevelBars(tech.level)" 
+                            class="skills__level-bar"
+                            [class.skills__level-bar--filled]="bar.filled"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              
-              <div class="skills__technologies">
-                <div 
-                  *ngFor="let tech of skill.technologies" 
-                  class="skills__tech-badge"
-                  [class.skills__tech-badge--featured]="tech.featured"
-                >
-                  <div class="skills__tech-icon" *ngIf="tech.icon">
-                    <i [class]="tech.icon"></i>
-                  </div>
-                  <span class="skills__tech-name">{{ tech.name }}</span>
-                  <div class="skills__tech-level">
-                    <div 
-                      class="skills__tech-dots"
-                      [attr.data-level]="tech.level"
-                    >
-                      <span 
-                        *ngFor="let dot of getDots(tech.level)" 
-                        class="skills__tech-dot"
-                        [class.skills__tech-dot--filled]="dot <= tech.level"
-                      ></span>
-                    </div>
-                  </div>
+            </div>
+
+            <div class="skills__summary">
+              <div class="skills__summary-item">
+                <div class="skills__summary-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="skills__summary-content">
+                  <h4>Full-Stack Development</h4>
+                  <p>Proficient in both frontend and backend technologies</p>
+                </div>
+              </div>
+              <div class="skills__summary-item">
+                <div class="skills__summary-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <div class="skills__summary-content">
+                  <h4>Modern Technologies</h4>
+                  <p>Experience with cutting-edge frameworks and tools</p>
+                </div>
+              </div>
+              <div class="skills__summary-item">
+                <div class="skills__summary-icon">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="skills__summary-content">
+                  <h4>Continuous Learning</h4>
+                  <p>Always exploring new technologies and best practices</p>
                 </div>
               </div>
             </div>
@@ -350,6 +397,18 @@ export class AboutComponent {
 
   getDots(level: number): number[] {
     return Array.from({ length: 5 }, (_, i) => i + 1);
+  }
+
+  getLevelBars(level: number): { filled: boolean }[] {
+    return Array.from({ length: 5 }, (_, i) => ({ filled: i < level }));
+  }
+
+  trackBySkill(index: number, skill: Skill): string {
+    return skill.category;
+  }
+
+  trackByTech(index: number, tech: Technology): string {
+    return tech.name;
   }
 
   getSocialDescription(platform: string): string {

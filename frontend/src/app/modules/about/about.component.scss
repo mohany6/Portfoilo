@@ -64,13 +64,47 @@
 
 // Skills Section
 .skills {
-  padding: 4rem 0;
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/assets/patterns/dots.svg') repeat;
+    opacity: 0.03;
+    z-index: 0;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    
+    &-text {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: #475569;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2.5rem;
+    margin-bottom: 4rem;
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -80,16 +114,22 @@
 
   &__category {
     background: white;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06),
+      0 0 0 1px rgba(255, 255, 255, 0.8);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.9);
     }
 
     &::before {
@@ -98,8 +138,15 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
+      height: 6px;
       background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
     }
 
     &[data-category="frontend"]::before {
@@ -122,72 +169,120 @@
   &__category-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+  }
+
+  &__category-badge {
+    display: flex;
+    align-items: center;
     gap: 1rem;
+    flex: 1;
   }
 
   &__category-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
 
     i {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       color: white;
     }
 
     .skills__category[data-category="backend"] & {
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
     }
 
     .skills__category[data-category="databases"] & {
       background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
     }
 
     .skills__category[data-category="tools & devops"] & {
       background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      box-shadow: 0 8px 16px rgba(239, 68, 68, 0.3);
+    }
+  }
+
+  &__category-level {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    .skills__category[data-category="backend"] & {
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .skills__category[data-category="databases"] & {
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .skills__category[data-category="tools & devops"] & {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
     }
   }
 
   &__category-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1f2937;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #1e293b;
     margin: 0;
     flex: 1;
+    text-align: center;
   }
 
-  &__category-level {
-    text-align: right;
+  &__category-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
     flex-shrink: 0;
   }
 
-  &__level-text {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #6b7280;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  &__level-bar {
-    width: 80px;
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 3px;
+  &__progress-bar {
+    width: 120px;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
     overflow: hidden;
+    position: relative;
   }
 
-  &__level-fill {
+  &__progress-fill {
     height: 100%;
     background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    border-radius: 3px;
-    transition: width 1s ease-out;
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      animation: shimmer 2s infinite;
+    }
 
     .skills__category[data-category="backend"] & {
       background: linear-gradient(90deg, #10b981 0%, #059669 100%);
@@ -202,60 +297,95 @@
     }
   }
 
+  &__progress-text {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #64748b;
+  }
+
   &__technologies {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.25rem;
 
     @media (max-width: 480px) {
       grid-template-columns: 1fr;
     }
   }
 
-  &__tech-badge {
+  &__tech-item {
     background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1rem;
-    transition: all 0.3s ease;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     position: relative;
+    overflow: hidden;
 
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
       border-color: #667eea;
+      background: white;
     }
 
     &--featured {
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
       border-color: #667eea;
+      border-width: 2px;
 
       &::before {
         content: '⭐';
         position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        font-size: 0.75rem;
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 0.875rem;
+        animation: pulse 2s infinite;
+      }
+    }
+
+    &[data-level="5"] {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    &[data-level="4"] {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.05);
+    }
+
+    &[data-level="3"] {
+      border-color: #6b7280;
+      background: rgba(107, 114, 128, 0.05);
+    }
+  }
+
+  &__tech-content {
+    margin-bottom: 1rem;
+  }
+
+  &__tech-icon {
+    margin-bottom: 0.75rem;
+
+    i {
+      font-size: 2rem;
+      color: #667eea;
+      transition: transform 0.3s ease;
+
+      .skills__tech-item:hover & {
+        transform: scale(1.1);
       }
     }
   }
 
-  &__tech-icon {
-    margin-bottom: 0.5rem;
-
-    i {
-      font-size: 1.5rem;
-      color: #667eea;
-    }
-  }
-
   &__tech-name {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #1f2937;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
     display: block;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
+    line-height: 1.4;
   }
 
   &__tech-level {
@@ -263,38 +393,124 @@
     justify-content: center;
   }
 
-  &__tech-dots {
+  &__level-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__level-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__level-bars {
     display: flex;
     gap: 0.25rem;
   }
 
-  &__tech-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #e5e7eb;
+  &__level-bar {
+    width: 6px;
+    height: 20px;
+    border-radius: 3px;
+    background: #e2e8f0;
     transition: all 0.3s ease;
 
     &--filled {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      box-shadow: 0 0 4px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
 
       .skills__category[data-category="backend"] & {
         background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        box-shadow: 0 0 4px rgba(16, 185, 129, 0.4);
+        box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
       }
 
       .skills__category[data-category="databases"] & {
         background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-        box-shadow: 0 0 4px rgba(245, 158, 11, 0.4);
+        box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
       }
 
       .skills__category[data-category="tools & devops"] & {
         background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-        box-shadow: 0 0 4px rgba(239, 68, 68, 0.4);
+        box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
       }
     }
   }
+
+  &__summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__summary-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__summary-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    i {
+      font-size: 1.25rem;
+      color: white;
+    }
+  }
+
+  &__summary-content {
+    flex: 1;
+
+    h4 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0 0 0.5rem 0;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 // Experience Section (removed as per user request)
