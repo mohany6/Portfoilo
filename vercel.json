@@ -5,34 +5,34 @@
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/frontend/browser/browser"
+        "distDir": "dist/frontend/browser"
       }
     }
   ],
   "rewrites": [
     {
       "source": "/assets/(.*)",
-      "destination": "/assets/$1"
+      "destination": "/frontend/public/assets/$1"
     },
     {
       "source": "/(.*\\.js)",
-      "destination": "/$1"
+      "destination": "/frontend/$1"
     },
     {
       "source": "/(.*\\.css)",
-      "destination": "/$1"
+      "destination": "/frontend/$1"
     },
     {
       "source": "/(.*\\.ico)",
-      "destination": "/$1"
+      "destination": "/frontend/$1"
     },
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/frontend/index.html"
     }
   ],
   "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist/frontend/browser/browser",
+  "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
   "framework": "angular"
 }
