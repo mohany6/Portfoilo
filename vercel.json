@@ -9,14 +9,26 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/frontend/assets/$1"
+      "source": "/assets/(.*)",
+      "destination": "/frontend/assets/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/frontend/index.html"
+      "source": "/(.*\\.js)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.css)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*\\.ico)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/index.html"
     }
   ],
   "buildCommand": "cd frontend && npm install && npm run build",
